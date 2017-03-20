@@ -2,6 +2,9 @@ package com.novas;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
+import java.util.Locale;
+import java.util.Map;
 
 public class InvokeBat2 {
     public void runbat(String batName) {
@@ -30,21 +33,10 @@ public class InvokeBat2 {
 
     public static void main(String[] args) throws Exception
     {
-        InvokeBat2 test1 = new InvokeBat2();
-        String batName = "C:\\demo\\run.bat";
-        Runtime rt = Runtime.getRuntime();
-        Process ps = null;
-        try {
-            ps = rt.exec("cmd.exe /C start /b "+batName);
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        ps.waitFor();
-        int i = ps.exitValue();
-        if (i == 0) {
-            System.out.println("执行完成.") ;
-        } else {
-            System.out.println("执行失败.") ;
-        }
+        Kettle kettle=Kettle.getKettleInstance();
+        Long taskid=kettle.run(0, "C:\\demo\\test.ktr");
+        System.out.println(taskid);
+       // Trans trans=kettle.getTransState(1489993945904L);
+       // System.out.println(trans);
     }
 }

@@ -23,6 +23,7 @@ public class DBConnection {
         this.password=password;
         Class.forName(driver);
         //1.getConnection()方法，连接MySQL数据库！！
+        System.out.println(url+"  "+user+"  "+password);
         con = DriverManager.getConnection(url, user, password);
     }
     public static Connection getDBConnectionInstance(String ip,String username,String password,String dbName) throws SQLException, ClassNotFoundException {

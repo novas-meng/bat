@@ -34,9 +34,7 @@ public class InvokeBat2 {
     public static void main(String[] args) throws Exception
     {
         Kettle kettle=Kettle.getKettleInstance();
-        Long taskid=kettle.run(0, "C:\\demo\\test.ktr");
+        Long taskid=kettle.run(1, "C:\\demo\\test.kjb");
         System.out.println(taskid);
-       // Trans trans=kettle.getTransState(1489993945904L);
-       // System.out.println(trans);
     }
 }

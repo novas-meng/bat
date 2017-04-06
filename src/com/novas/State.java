@@ -3,23 +3,29 @@ package com.novas;
 /**
  * Created by 讨鬼 on 2017/3/20.
  */
-public class Trans {
+public class State {
     private long id;
+    private int type;
     private long startTime;
-    private String transName;
+    private String name;
     private String STATUS;
     private long endTime;
-    public Trans(long id,long startTime,String transName,String STATUS,long endTime)
+    public State(long id,int type,long startTime,String name,String STATUS,long endTime)
     {
         this.id=id;
+        this.type=type;
         this.startTime=startTime;
-        this.transName=transName;
+        this.name=name;
         this.STATUS=STATUS;
         this.endTime=endTime;
     }
     public long getId()
     {
         return id;
+    }
+    public int getType()
+    {
+        return type;
     }
     public long getStartTime()
     {
@@ -29,9 +35,9 @@ public class Trans {
     {
         return endTime;
     }
-    public String getTransName()
+    public String getName()
     {
-        return transName;
+        return name;
     }
     public String getSTATUS()
     {
@@ -40,6 +46,6 @@ public class Trans {
 
     @Override
     public String toString() {
-        return "TRANS:"+id+":"+startTime+":"+transName+":"+STATUS+":"+endTime;
+        return "TRANS:"+id+":"+type+":"+startTime+":"+name+":"+STATUS+":"+endTime;
     }
 }
